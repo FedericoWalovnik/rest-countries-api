@@ -1,0 +1,28 @@
+{
+  "name": "rest-countries-api",
+  "version": "1.0.0",
+  "description": "![Design preview for the REST Countries API with color theme switcher coding challenge](./design/desktop-preview.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "node-sass src/sass/main.scss src/css/style.css -w",
+    "compile:sass": "node-sass sass/main.scss src/css/style.comp.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FedericoWalovnik/rest-countries-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FedericoWalovnik/rest-countries-api/issues"
+  },
+  "homepage": "https://github.com/FedericoWalovnik/rest-countries-api#readme",
+  "dependencies": {
+    "bulma": "^0.9.1",
+    "node-sass": "^4.14.1"
+  },
+  "private": true,
+  "devDependencies": {
+    "sass": "^1.27.1"
+  }
+}
