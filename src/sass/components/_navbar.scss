@@ -1,5 +1,9 @@
 .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: $DarkBlueElements;
   height: 10vh;
   width: 100vw;
+  padding: 0 4rem;
 }
