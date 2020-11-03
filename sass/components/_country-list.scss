@@ -1,0 +1,12 @@
+.country-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  margin: 20vh 7vw 0 7vw;
+  gap: 9rem;
+
+  &__card {
+    background-color: $DarkBlueElements;
+    width: 100%;
+    height: 40vh;
+  }
+}
