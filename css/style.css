@@ -62,7 +62,7 @@ body {
   align-items: center;
   background-color: #2b3945;
   height: 10vh;
-  width: 100vw;
+  width: 100%;
   padding: 0 4rem; }
 
 .country-list {
@@ -77,6 +77,8 @@ body {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 5px 5px 16px 0px rgba(0, 0, 0, 0.75); }
+  .country-list__card > * {
+    pointer-events: none; }
   .country-list__flag-container {
     height: 50%; }
   .country-list__flag {

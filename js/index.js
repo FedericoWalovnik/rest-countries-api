@@ -1,10 +1,16 @@
+import {getAllCountries, getCountryByName} from './details.js'
+
 //HTML ELEMENTS
 const countryList = document.getElementById("country-list");
+
+//LINKS
+const localLink = "http://127.0.0.1:5500/src";
+const prodLink = "";
 
 const updateCountriesList = (countries) => {
     countries.forEach(country => {
         const HTMLtoAdd = `
-        <div class="country-list__card">
+        <div class="country-list__card" name="${country.name}" id="countryListItem">
             <div class="country-list__flag-container">
                 <img src="${country.flag}" class="country-list__flag"></img>
             </div>
@@ -22,10 +28,17 @@ const updateCountriesList = (countries) => {
 }
 
 const getInitialData = async() =>{
-    const rawData = await fetch("https://restcountries.eu/rest/v2/all");
-    const convertedData = await rawData.json();
-    console.log(convertedData)
-    updateCountriesList(convertedData)
+    const allCountries = await getAllCountries();
+    updateCountriesList(allCountries);
 }
 
-window.addEventListener('load', getInitialData)
+const handleCountryCardClick = (e) =>{
+    if(e.target.classList.contains("country-list__card")){
+        const countryName = e.target.getAttribute("name");
+        window.location = `${localLink}/details.html?&country=${countryName}`;
+    }
+}
+
+//Event listeners
+window.addEventListener('load', getInitialData);
+countryList.addEventListener("click", handleCountryCardClick.bind(Event))
