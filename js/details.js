@@ -1,12 +1,11 @@
-export const getAllCountries = async() =>{
-    const rawData = await fetch("https://restcountries.eu/rest/v2/all");
-    const convertedData = await rawData.json();
-    return convertedData;
-}
+import {getAllCountries, getCountryByName} from './getData.js'
 
 
-export const getCountryByName = async(name) => {
-    const rawData = await fetch(`https://restcountries.eu/rest/v2/name/${name}`);
-    const convertedData = await rawData.json();
-    console.log(convertedData)
+const getNamefromTheURL = () =>{
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const countryName = urlParams.get("country");
+    console.log(countryName);
 }
+
+window.addEventListener('load', getNamefromTheURL);
