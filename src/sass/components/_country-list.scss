@@ -1,7 +1,6 @@
 .country-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-  margin: 20vh 4vw 0 4vw;
   gap: 8rem;
 
   &__card {
@@ -11,6 +10,7 @@
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 5px 5px 16px 0px rgba(0, 0, 0, 0.75);
+    cursor: pointer;
   }
 
   &__card > * {

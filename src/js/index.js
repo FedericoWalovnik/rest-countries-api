@@ -1,4 +1,4 @@
-import {getAllCountries, getCountryByName} from './details.js'
+import {getAllCountries, getCountryByName} from './getData.js'
 
 //HTML ELEMENTS
 const countryList = document.getElementById("country-list");
