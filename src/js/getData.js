@@ -8,5 +8,5 @@ export const getAllCountries = async() =>{
 export const getCountryByName = async(name) => {
     const rawData = await fetch(`https://restcountries.eu/rest/v2/name/${name}`);
     const convertedData = await rawData.json();
-    console.log(convertedData)
+    return convertedData[0];
 }
