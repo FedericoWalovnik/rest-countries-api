@@ -41,4 +41,4 @@ const handleCountryCardClick = (e) =>{
 
 //Event listeners
 window.addEventListener('load', getInitialData);
-countryList.addEventListener("click", handleCountryCardClick.bind(Event))
+countryList.addEventListener("click", handleCountryCardClick.bind(Event));
