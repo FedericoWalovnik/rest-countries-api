@@ -1,4 +1,4 @@
-import {getCountryByName} from './getData.js'
+import * as data from './getData.js'
 
 //HTML ELEMENTS
 const countryName = document.getElementById('countryName')
@@ -13,6 +13,7 @@ const countryCurrencies = document.getElementById('currencies');
 const countryLanguages = document.getElementById('languages');
 const borderCountriesList = document.getElementById('borderCountries');
 
+const backButton = document.getElementById('backButton');
 
 const getNamefromTheURL = () =>{
     const queryString = window.location.search;
@@ -47,9 +48,14 @@ const loadData = (countryData) =>{
 
 const handleLoadDetails = async() =>{
     const countryName = getNamefromTheURL();
-    const countryData = await getCountryByName(countryName);
+    const countryData = await data.getCountryByName(countryName);
     console.log(countryData);
     loadData(countryData);
 }
 
+const handleClickBackButton = () => {
+    window.location = `${data.localLink}/index.html`
+}
+
 window.addEventListener('load', handleLoadDetails);
+backButton.addEventListener('click', handleClickBackButton);

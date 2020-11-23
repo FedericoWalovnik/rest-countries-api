@@ -1,11 +1,7 @@
-import {getAllCountries, getCountryByName} from './getData.js'
+import * as data from './getData.js'
 
 //HTML ELEMENTS
 const countryList = document.getElementById("country-list");
-
-//LINKS
-const localLink = "http://127.0.0.1:5500/src";
-const prodLink = "";
 
 const updateCountriesList = (countries) => {
     countries.forEach(country => {
@@ -28,14 +24,14 @@ const updateCountriesList = (countries) => {
 }
 
 const getInitialData = async() =>{
-    const allCountries = await getAllCountries();
+    const allCountries = await data.getAllCountries();
     updateCountriesList(allCountries);
 }
 
 const handleCountryCardClick = (e) =>{
     if(e.target.classList.contains("country-list__card")){
         const countryName = e.target.getAttribute("name");
-        window.location = `${localLink}/details.html?&country=${countryName}`;
+        window.location = `${data.localLink}/details.html?&country=${countryName}`;
     }
 }
 

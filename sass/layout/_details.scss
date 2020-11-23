@@ -1,6 +1,6 @@
 .details {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   font-weight: 600;
 
   &__flag {
@@ -51,5 +51,32 @@
     padding: 0.6rem 3.5rem;
     margin-left: 1rem;
     cursor: default;
+  }
+}
+
+.backButton_container {
+  display: flex;
+  align-items: center;
+  height: 23vh;
+}
+
+.backButton {
+  display: flex;
+  height: 2rem;
+  width: 4rem;
+  padding: 2rem 7rem;
+  align-items: center;
+  justify-content: center;
+  background-color: $DarkBlueElements;
+  cursor: pointer;
+  color: $white;
+  margin-left: 8vw;
+  border-radius: 3px;
+  box-shadow: 1px 1px 18px 4px rgba(0, 0, 0, 0.34);
+
+  &__arrow {
+    font-size: 2.4rem;
+    margin-top: -5px;
+    margin-right: 7px;
   }
 }
