@@ -103,7 +103,7 @@ body {
 
 .details {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   font-weight: 600; }
   .details__flag {
     height: 45vh;
@@ -138,5 +138,31 @@ body {
     margin-left: 1rem;
     cursor: default; }
 
+.backButton_container {
+  display: flex;
+  align-items: center;
+  height: 23vh; }
+
+.backButton {
+  display: flex;
+  height: 2rem;
+  width: 4rem;
+  padding: 2rem 7rem;
+  align-items: center;
+  justify-content: center;
+  background-color: #2b3945;
+  cursor: pointer;
+  color: white;
+  margin-left: 8vw;
+  border-radius: 3px;
+  box-shadow: 1px 1px 18px 4px rgba(0, 0, 0, 0.34); }
+  .backButton__arrow {
+    font-size: 2.4rem;
+    margin-top: -5px;
+    margin-right: 7px; }
+
 .main-section {
   margin: 20vh 4vw 0 4vw; }
+
+.main-section-details {
+  margin: 0 8vw; }
