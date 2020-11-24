@@ -41,18 +41,18 @@ const handleCountryCardClick = (e) => {
 
 const handleInputCountry = async () => {
   if (inputCountry.value) {
-    const searchResult = await data.getCountryByName(inputCountry.value);
-    console.log(searchResult);
+    const searchResult = await data.getCountriesByName(inputCountry.value);
     updateCountriesList(searchResult);
   }
 };
 
 const handleDropDownRegions = async () => {
-  console.log(dropDownRegions.value);
+  const searchResult = await data.getCountriesByRegion(dropDownRegions.value);
+  updateCountriesList(searchResult);
 };
 
 //Event listeners
 window.addEventListener("load", getInitialData);
 countryList.addEventListener("click", handleCountryCardClick.bind(Event));
 inputCountry.addEventListener("keyup", handleInputCountry);
-dropDownRegions.addEventListener("onchange", handleDropDownRegions);
+dropDownRegions.addEventListener("change", handleDropDownRegions);
