@@ -35,7 +35,7 @@ const getInitialData = async () => {
 const handleCountryCardClick = (e) => {
   if (e.target.classList.contains("country-list__card")) {
     const countryName = e.target.getAttribute("name");
-    window.location = `${data.localLink}/details.html?&country=${countryName}`;
+    window.location = `${data.prodLink}/details.html?&country=${countryName}`;
   }
 };
 
