@@ -110,6 +110,11 @@ body {
   height: 20vh;
   justify-content: space-between;
   align-items: center; }
+  @media only screen and (max-width: 56.25em) {
+    .filters {
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: flex-start; } }
   .filters__element {
     height: 4.5rem;
     border-top-right-radius: 0.5rem;
@@ -125,12 +130,18 @@ body {
     position: relative; }
   .filters__dropDown {
     width: 15%; }
+    @media only screen and (max-width: 56.25em) {
+      .filters__dropDown {
+        width: 45%; } }
 
 .filters__inputContainer {
   display: flex; }
 
 .filters__input {
   width: 35vw; }
+  @media only screen and (max-width: 56.25em) {
+    .filters__input {
+      width: 80vw; } }
 
 .filters__input::placeholder {
   color: white;
