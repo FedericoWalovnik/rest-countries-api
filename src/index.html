@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/20e6b407f6.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
         integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,7 +20,20 @@
         </div>
     </nav>
     <section class="main-section">
-        
+        <div class="filters">
+            <div class="filters__inputContainer">
+                <label for="inputCountry"><i class="filters__icon fas fa-search"></i></label>
+                <input name="inputCountry" type="text" class="filters__element filters__input" id="inputCountry" placeholder="Search for a country..."></input>
+            </div>
+            <select class="filters__element filters__dropDown" id="dropdownRegions">
+                <option value="" disabled selected hidden>Filter by Region</option>
+                <option value="africa">Africa</option>
+                <option value="america">America</option>
+                <option value="asia">Asia</option>
+                <option value="europe">Europe</option>
+                <option value="oceania">Oceania</option>
+            </select>
+        </div>
         <div class="country-list" id="country-list">
             <!--<div class="country-list__card">
                 <div class="country-list__flag"></div>

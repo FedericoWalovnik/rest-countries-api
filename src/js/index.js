@@ -1,11 +1,15 @@
-import * as data from './getData.js'
+import * as data from "./getData.js";
 
 //HTML ELEMENTS
 const countryList = document.getElementById("country-list");
+const inputCountry = document.getElementById("inputCountry");
+const dropDownRegions = document.getElementById("dropdownRegions");
 
 const updateCountriesList = (countries) => {
-    countries.forEach(country => {
-        const HTMLtoAdd = `
+  countryList.innerHTML = "";
+  console.log("Update the UI");
+  countries.forEach((country) => {
+    const HTMLtoAdd = `
         <div class="country-list__card" name="${country.name}" id="countryListItem">
             <div class="country-list__flag-container">
                 <img src="${country.flag}" class="country-list__flag"></img>
@@ -18,23 +22,37 @@ const updateCountriesList = (countries) => {
                     <p class="country-list__single-detail">Capital: <span id="detail">${country.capital}</span></p>
                 </div>
             </div>
-        </div>`
-        countryList.insertAdjacentHTML("beforeEnd", HTMLtoAdd) 
-    });
-}
+        </div>`;
+    countryList.insertAdjacentHTML("beforeEnd", HTMLtoAdd);
+  });
+};
 
-const getInitialData = async() =>{
-    const allCountries = await data.getAllCountries();
-    updateCountriesList(allCountries);
-}
+const getInitialData = async () => {
+  const allCountries = await data.getAllCountries();
+  updateCountriesList(allCountries);
+};
 
-const handleCountryCardClick = (e) =>{
-    if(e.target.classList.contains("country-list__card")){
-        const countryName = e.target.getAttribute("name");
-        window.location = `${data.localLink}/details.html?&country=${countryName}`;
-    }
-}
+const handleCountryCardClick = (e) => {
+  if (e.target.classList.contains("country-list__card")) {
+    const countryName = e.target.getAttribute("name");
+    window.location = `${data.localLink}/details.html?&country=${countryName}`;
+  }
+};
+
+const handleInputCountry = async () => {
+  if (inputCountry.value) {
+    const searchResult = await data.getCountryByName(inputCountry.value);
+    console.log(searchResult);
+    updateCountriesList(searchResult);
+  }
+};
+
+const handleDropDownRegions = async () => {
+  console.log(dropDownRegions.value);
+};
 
 //Event listeners
-window.addEventListener('load', getInitialData);
+window.addEventListener("load", getInitialData);
 countryList.addEventListener("click", handleCountryCardClick.bind(Event));
+inputCountry.addEventListener("keyup", handleInputCountry);
+dropDownRegions.addEventListener("onchange", handleDropDownRegions);

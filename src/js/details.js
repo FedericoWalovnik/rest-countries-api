@@ -19,7 +19,6 @@ const getNamefromTheURL = () =>{
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const countryName = urlParams.get("country");
-    console.log(countryName)
     return countryName;
 }
 
@@ -48,7 +47,7 @@ const loadData = (countryData) =>{
 
 const handleLoadDetails = async() =>{
     const countryName = getNamefromTheURL();
-    const countryData = await data.getCountryByName(countryName);
+    const countryData = await data.getOneCountryByName(countryName);
     console.log(countryData);
     loadData(countryData);
 }

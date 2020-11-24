@@ -1,0 +1,51 @@
+.filters {
+  display: flex;
+  height: 20vh;
+  justify-content: space-between;
+  align-items: center;
+
+  &__element {
+    height: 4.5rem;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    border: none;
+    background-color: $DarkBlueElements;
+    color: $white;
+    padding: 1rem;
+  }
+
+  &__element:focus {
+    outline: none;
+    background-color: hsl(206, 25%, 32%);
+  }
+
+  &__icon {
+    position: relative;
+  }
+
+  &__dropDown {
+    width: 15%;
+  }
+}
+.filters__inputContainer {
+  display: flex;
+}
+
+.filters__input {
+  width: 35vw;
+}
+
+.filters__input::placeholder {
+  color: $white;
+  opacity: 1; /* Firefox */
+}
+
+.filters__icon {
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  display: flex;
+  padding: 0 2rem;
+  background-color: $DarkBlueElements;
+  height: 4.5rem;
+  align-items: center;
+}
