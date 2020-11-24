@@ -1,6 +1,5 @@
 export const localLink = "http://127.0.0.1:5500/src";
-export const prodLink =
-  "https://federicowalovnik.github.io/rest-countries-api/";
+export const prodLink = "https://federicowalovnik.github.io/rest-countries-api";
 
 export const getAllCountries = async () => {
   const rawData = await fetch("https://restcountries.eu/rest/v2/all");
