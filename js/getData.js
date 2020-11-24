@@ -8,7 +8,19 @@ export const getAllCountries = async() =>{
 }
 
 
+export const getOneCountryByName = async(name) => {
+    const rawData = await fetch(`https://restcountries.eu/rest/v2/name/${name}`);
+    const convertedData = await rawData.json();
+    return convertedData[0];
+}
+
 export const getCountryByName = async(name) => {
+    const rawData = await fetch(`https://restcountries.eu/rest/v2/name/${name}`);
+    const convertedData = await rawData.json();
+    return convertedData;
+}
+
+export const getCountriesByRegion = async(name) => {
     const rawData = await fetch(`https://restcountries.eu/rest/v2/name/${name}`);
     const convertedData = await rawData.json();
     return convertedData[0];
