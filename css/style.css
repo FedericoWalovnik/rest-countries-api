@@ -71,8 +71,12 @@ body {
 
 .country-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-  gap: 8rem; }
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 27rem));
+  gap: 8rem;
+  justify-content: space-between; }
+  @media (max-width: 37.5em) {
+    .country-list {
+      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); } }
   .country-list__card {
     background-color: #2b3945;
     width: 100%;
@@ -146,17 +150,35 @@ body {
   display: flex;
   justify-content: space-between;
   font-weight: 600; }
+  @media only screen and (max-width: 56.25em) {
+    .details {
+      flex-direction: column;
+      justify-content: center; } }
   .details__flag {
     height: 45vh;
     width: 35vw;
     background-position: center;
     background-size: cover; }
+    @media only screen and (max-width: 56.25em) {
+      .details__flag {
+        width: 80vw;
+        height: 25vh; } }
   .details__data {
     width: 40vw; }
+    @media only screen and (max-width: 56.25em) {
+      .details__data {
+        flex-direction: column;
+        justify-content: center;
+        width: 80vw;
+        margin-top: 2rem; } }
   .details__info {
     margin-top: 2rem;
     display: flex;
     justify-content: space-between; }
+    @media only screen and (max-width: 56.25em) {
+      .details__info {
+        flex-direction: column;
+        justify-content: center; } }
   .details__thin {
     font-weight: 200;
     margin-left: 1rem; }
@@ -165,6 +187,10 @@ body {
   .details__border-countries-container {
     display: flex;
     margin-top: 6rem; }
+    @media only screen and (max-width: 56.25em) {
+      .details__border-countries-container {
+        flex-direction: column;
+        margin-top: 3rem; } }
   .details__border-countries-container p {
     flex: 1 0 20%; }
   .details__border-countries {
@@ -173,6 +199,15 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem; }
+    @media (max-width: 37.5em) {
+      .details__border-countries {
+        grid-template-columns: repeat(3, 1fr);
+        margin-top: 1rem;
+        flex: 0 0 100%; } }
+    @media only screen and (max-width: 56.25em) {
+      .details__border-countries {
+        margin-top: 1rem;
+        flex: 0 0 100%; } }
   .details__border-country {
     background-color: #2b3945;
     padding: 0.6rem 3.5rem;
@@ -183,6 +218,9 @@ body {
   display: flex;
   align-items: center;
   height: 23vh; }
+  @media only screen and (max-width: 56.25em) {
+    .backButton_container {
+      height: 15vh; } }
 
 .backButton {
   display: flex;

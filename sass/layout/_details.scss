@@ -3,21 +3,43 @@
   justify-content: space-between;
   font-weight: 600;
 
+  @include respond(tab-port) {
+    flex-direction: column;
+    justify-content: center;
+  }
+
   &__flag {
     height: 45vh;
     width: 35vw;
     background-position: center;
     background-size: cover;
+
+    @include respond(tab-port) {
+      width: 80vw;
+      height: 25vh;
+    }
   }
 
   &__data {
     width: 40vw;
+
+    @include respond(tab-port) {
+      flex-direction: column;
+      justify-content: center;
+      width: 80vw;
+      margin-top: 2rem;
+    }
   }
 
   &__info {
     margin-top: 2rem;
     display: flex;
     justify-content: space-between;
+
+    @include respond(tab-port) {
+      flex-direction: column;
+      justify-content: center;
+    }
   }
 
   &__thin {
@@ -32,6 +54,11 @@
   &__border-countries-container {
     display: flex;
     margin-top: 6rem;
+
+    @include respond(tab-port) {
+      flex-direction: column;
+      margin-top: 3rem;
+    }
   }
 
   &__border-countries-container p {
@@ -44,6 +71,17 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
+
+    @include respond(phone) {
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 1rem;
+      flex: 0 0 100%;
+    }
+
+    @include respond(tab-port) {
+      margin-top: 1rem;
+      flex: 0 0 100%;
+    }
   }
 
   &__border-country {
@@ -58,6 +96,10 @@
   display: flex;
   align-items: center;
   height: 23vh;
+
+  @include respond(tab-port) {
+    height: 15vh;
+  }
 }
 
 .backButton {
