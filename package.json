@@ -19,7 +19,7 @@
   "homepage": "https://github.com/FedericoWalovnik/rest-countries-api#readme",
   "dependencies": {
     "bulma": "^0.9.1",
-    "node-sass": "^4.14.1"
+    "node-sass": "^7.0.0"
   },
   "private": true,
   "devDependencies": {
